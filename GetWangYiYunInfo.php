@@ -183,12 +183,12 @@ class GetWangYiYunInfo
 
         $hotCommentsLength = count($data['hotComments']);
         for ($i=0;$i<$hotCommentsLength;$i++){
-            $text  = "歌名：".$songName."\n";
-            $text .= "评论：".$data['hotComments'][$i]['content']."\n";
-            $text .= "时间：".date("Y-m-d H:i:s",$data['hotComments'][$i]['time'] / 1000)."\n";
-            $text .= "用户名：".$data['hotComments'][$i]['user']['nickname']."\n";
-            $text .= "点赞数：".$data['hotComments'][$i]['likedCount']."\n";
-            $text .= "******************************************************"."\n";
+            $text  = "歌名：".$songName.PHP_EOL;
+            $text .= "评论：".$data['hotComments'][$i]['content'].PHP_EOL;
+            $text .= "时间：".date("Y-m-d H:i:s",$data['hotComments'][$i]['time'] / 1000).PHP_EOL;
+            $text .= "用户名：".$data['hotComments'][$i]['user']['nickname'].PHP_EOL;
+            $text .= "点赞数：".$data['hotComments'][$i]['likedCount'].PHP_EOL;
+            $text .= "******************************************************".PHP_EOL;
             // 写入文件，第一个参数要写入的文件名，第二个参数是被写的字符串
             fwrite($myFile,$text);
         }
